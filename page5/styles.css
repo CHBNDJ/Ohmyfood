@@ -63,6 +63,8 @@ body {
 .menu {
     width: 100%;
     background-color: #f2f2f2;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .titre {
@@ -98,33 +100,62 @@ body {
     background-clip: text;
     background-image: linear-gradient(to top, #FF79DA, #9356DC);
     opacity: 0;
-    transition: all 200ms linear alternate-reverse;
+    transition: all 200ms linear;
+    transition-timing-function: ease-in-out;
 }
 
 .fa-solid:hover {
     opacity: 1;
 }
 
-.menu h2 {
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 0.5em 1em 1em;
-}
-
 .menu1 h2 {
     font-size: 1rem;
     font-weight: 300;
     margin: 0.5em 1em -1em;
+    position: relative;
 }
 
+.menu1 h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    width: 40px;
+    height: 3px;
+    background: #99e2d0;
+  }
+
 .plats {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
+    position: relative;
 }
+
+.plats h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    width: 40px;
+    height: 3px;
+    background: #99e2d0;
+  }
 
 .desserts {
     margin-top: 5rem;
+    position: relative;
 }
 
+.desserts h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -7px;
+    width: 40px;
+    height: 3px;
+    background: #99e2d0;
+  }
+
+  
 .carte {
     display: flex;
     justify-content: space-between;
@@ -165,8 +196,6 @@ body {
 .gout {
     width: 85%;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-weight: 300;
     margin-top: 0.2rem;
     margin-left: 0.2rem;
@@ -181,7 +210,7 @@ body {
     margin-bottom: 0;
 }
 
-.boutoncommander {
+.btn_commander {
     border-radius: 30px;
     background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
@@ -200,6 +229,11 @@ body {
     text-decoration: none;
     font-size: 19px;
     cursor: pointer;
+}
+
+.btn_commander:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
 }
 
 /**FOOTER**/
@@ -282,4 +316,166 @@ body {
 .card:hover .card-price {
     transform: translateX(-55px);
     transition-timing-function: linear;
+}
+
+.card:hover .gout {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*****Media queries*****/
+
+@media screen and (min-width: 1024px) {
+
+
+    
+    /***HEADER***/    
+    
+    .header img {
+        margin: 30px 0 12px 0;
+        width: 15%;
+
+    }
+    
+    .fa-arrow-left {
+        left: 2%;
+        top: 36px;
+       
+    }
+
+    /***MAIN***/
+
+    .picture img {
+        width: 100%;
+        position: absolute;
+        top: 13px;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        height: 500px;
+        object-fit: cover;
+        margin-top: 80px;
+    }
+    
+    .main {
+        position: initial;
+        margin-top: 490px;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        background-color: #f2f2f2;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .titre {
+        justify-content: center;
+        
+    }
+
+    .titre h1 {
+        font-size: 1.5rem;
+        
+    }
+
+
+
+    .fa-regular {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        font-size: 1.2em;
+        opacity: 1;
+        cursor: pointer;
+    }
+        
+    
+    .fa-solid {
+        position: relative;
+        top: 0px;
+        right: 19px;
+        font-size: 1.2em;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(to top, #FF79DA, #9356DC);
+        opacity: 0;
+        transition: all 200ms linear;
+        transition-timing-function: ease-in-out;
+    }
+
+    .fa-solid:hover {
+        opacity: 1;
+    }
+
+    .menu1 {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu1 h2 {
+        margin-right: 57%;
+    }
+
+    .card {
+        width: 60%;
+    }
+
+    .plats {
+        margin-top: 3rem;
+        margin-right: 59%;
+    }
+
+    .desserts {
+        margin-top: 3rem;
+        margin-right: 56%;
+    }
+
+    .btn_commander {
+        width: 23%;
+        margin-top: 6%;
+        margin-left: 37%;
+    }
+
+    .backfoot {
+        background-color: #353535;
+        height: 110px;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .logfoot {
+        margin-right: 4%;
+        flex-direction: row-reverse;
+    
+    }
+    
+    .logfoot h4 {
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-top: 55px;
+        font-size: 20px;
+    }
+    
+    .foot {
+        color: white;
+        margin-left: 0px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 5%;
+        margin-top: 50px;
+    }
+
+    .foot p {
+        margin: 10px;
+        font-size: 15px;
+    }
+    
 }

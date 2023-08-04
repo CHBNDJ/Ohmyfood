@@ -464,7 +464,7 @@
 
 .fa-rotate-by {
   -webkit-transform: rotate(var(--fa-rotate-angle, none));
-          transform: rotate(var(--fa-rotate-angle, none)); }
+          transform: rotate(var(--fa-rotate-angle,0));}
 
 .fa-stack {
   display: inline-block;

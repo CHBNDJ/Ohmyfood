@@ -122,7 +122,7 @@ body {
     width: 40px;
     height: 3px;
     background: #99e2d0;
-  }
+}
 
 .plats {
     margin-top: 4.5rem;
@@ -137,7 +137,7 @@ body {
     width: 40px;
     height: 3px;
     background: #99e2d0;
-  }
+}
 
 .desserts {
     margin-top: 5rem;
@@ -152,7 +152,7 @@ body {
     width: 40px;
     height: 3px;
     background: #99e2d0;
-  }
+}
 
 
 
@@ -179,7 +179,7 @@ body {
     transform: translateY(30px);
     animation-fill-mode: both;
     animation-duration: 1000ms;
-    animation-name: reveal;
+    animation-name: card;
 }
 
 .card-content {
@@ -283,13 +283,22 @@ body {
 .extension {
     height: 70px;
     position: absolute;
-    right: -62px;
+    right: -55px;
     width: 60px;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     background-color: #99e2d0;
     display: none;
 }
+
+  @keyframes extension {
+    0% {
+              transform: translateX(-45px);
+    }
+    100% {
+              transform: translateX(-54px);
+    }
+  }
 
 .flex {
     display: flex;
@@ -309,13 +318,14 @@ body {
 
 .card:hover .extension {
     display: block;
-    transform: translateX(-100%);
-    animation: extension 5000ms 0s ease-in-out alternate-reverse;
+    animation: extension 110ms linear forwards;
+    transition-delay: 0ms;
 }
 
 .card:hover .card-price {
     transform: translateX(-55px);
     transition-timing-function: linear;
+    transition-delay: 90ms;
 }
 
 .card:hover .gout {
@@ -479,6 +489,42 @@ body {
     .foot p {
         margin: 10px;
         font-size: 15px;
+    }
+
+    .extension {
+        height: 70px;
+        position: absolute;
+        right: -55px;
+        width: 60px;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background-color: #99e2d0;
+        display: none;
+    }
+    
+      @keyframes extension {
+        0% {
+                  transform: translateX(-45px);
+        }
+        100% {
+                  transform: translateX(-54px);
+        }
+      }
+
+      .card-price {
+        margin-left: 120%;
+    }  
+
+    .card:hover .extension {
+        display: block;
+        animation: extension 120ms linear forwards;
+        transition-delay: 0ms;
+    }
+    
+    .card:hover .card-price {
+        transform: translateX(-60px);
+        transition-timing-function: linear;
+        transition-delay: 2ms;
     }
 
 }
